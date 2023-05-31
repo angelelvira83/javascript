@@ -1,4 +1,7 @@
 /*
+
+https://openwebinars.net/academia/portada/javascript/
+
 USAR ARGUMENTOS
 process.argv (incluye todos, en node script hola, "hola" es [2])
 
