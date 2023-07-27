@@ -111,3 +111,26 @@ salute_es.sayHi();
 // Nos saldrá un alert con el texto 
 // 'Hola, Yo soy un método privado'
 
+
+var playerScores = [
+    {
+        name: "pedro",
+        points : 20
+    },
+    {
+        name: "susana",
+        points : 25
+    },
+    {
+        name: "raquel",
+        points : 10
+    },
+    {
+        name: "alfonso",
+        points : 20
+    }
+  
+  ];
+  
+  var numero = Number(20);
+  console.log(typeof(numero))

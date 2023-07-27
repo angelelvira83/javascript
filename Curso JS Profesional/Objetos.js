@@ -78,3 +78,16 @@ function Actor (name, speed, strength) {
 
 var tomHanks = new Actor("Tom Hanks", "Velocidad lenta", "Extraordinario")
 tomHanks.salute()
+
+
+
+
+let respuesta = "Siempre va bien";
+
+if (respuesta === "Siempre va bien") {
+    let premio =  2000;
+} else {
+    premio = 0
+}
+
+console.log(premio);
