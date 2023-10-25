@@ -1,0 +1,63 @@
+{
+  name: "Defecto",
+  priority: {
+    self: "https://jira.almeci.io/rest/api/2/priority/10200",
+    iconUrl: "https://jira.almeci.io/images/icons/priorities/highest.svg",
+    name: "Highest",
+    id: "10200"
+  },
+  labels: [ "entorno_uat", "firefly-Incategoriables-Ready", "incidencia_test_plan" ],
+  entorno: {
+    self: "https://jira.almeci.io/rest/api/2/customFieldOption/15702",
+    value: "UAT",
+    id: "15702",
+    disabled: false
+  },
+  team: {
+    self: "https://jira.almeci.io/rest/api/2/customFieldOption/15400",
+    value: "AT Sistemas",
+    id: "15400",
+    disabled: false,
+    child: {
+      self: "https://jira.almeci.io/rest/api/2/customFieldOption/15410",
+      value: "Incategorizables",
+      id: "15410",
+      disabled: false
+    }
+  },
+  assignee: {
+    self: "https://jira.almeci.io/rest/api/2/user?username=X39904RO",
+    name: "X39904RO",
+    key: "JIRAUSER85430",
+    emailAddress: "santiago.rodriguezl@softtek.com",
+    avatarUrls: {
+      "48x48": "https://jira.almeci.io/secure/useravatar?ownerId=JIRAUSER85430&avatarId=16912",
+      "24x24": "https://jira.almeci.io/secure/useravatar?size=small&ownerId=JIRAUSER85430&avatarId=16912",
+      "16x16": "https://jira.almeci.io/secure/useravatar?size=xsmall&ownerId=JIRAUSER85430&avatarId=16912",
+      "32x32": "https://jira.almeci.io/secure/useravatar?size=medium&ownerId=JIRAUSER85430&avatarId=16912"
+    },
+    displayName: "SANTIAGO RODRIGUEZ LLORENTE",
+    active: true,
+    timeZone: "Europe/Madrid"
+  },
+  project: {
+    self: "https://jira.almeci.io/rest/api/2/project/17400",
+    id: "17400",
+    key: "PD00000659",
+    name: "firefly-audit",
+    projectTypeKey: "software",
+    avatarUrls: {
+      "48x48": "https://jira.almeci.io/secure/projectavatar?avatarId=10324",
+      "24x24": "https://jira.almeci.io/secure/projectavatar?size=small&avatarId=10324",
+      "16x16": "https://jira.almeci.io/secure/projectavatar?size=xsmall&avatarId=10324",
+      "32x32": "https://jira.almeci.io/secure/projectavatar?size=medium&avatarId=10324"
+    },
+    projectCategory: {
+      self: "https://jira.almeci.io/rest/api/2/projectCategory/10500",
+      id: "10500",
+      description: "",
+      name: "Firefly"
+    }
+  },
+  fixVersions: []
+}

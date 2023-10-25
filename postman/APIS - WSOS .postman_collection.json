@@ -1,0 +1,2396 @@
+{
+	"info": {
+		"_postman_id": "2b841767-c6c2-499d-9209-fba0b8ec50e2",
+		"name": "APIS - WSOS ",
+		"description": "Firefly APIs with autentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - Token (AVE) - JWT",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer f597cd70-ef41-38d2-967e-74e79b8efc8b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "validity_period",
+							"value": "157680000",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://devops-test-data-api.ave.eci.geci/token",
+					"protocol": "https",
+					"host": [
+						"devops-test-data-api",
+						"ave",
+						"eci",
+						"geci"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Token (AVE)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*",
+							"var json = JSON.parse(responseBody);",
+							"pm.environment.set(\"token\", `Bearer ${json.access_token}`);",
+							"console.log(pm.environment.get(\"token\"));",
+							"",
+							"pm.test(\"Check if status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "LtHnLv6mLeMJSND7pXUAmXrQ2hYa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "QlmafP051Lfdm6TjUIJG2ajdYbEa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "validity_period",
+							"value": "-157680000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "scope",
+							"value": "products_global_admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://wso2-idp.uat.eci.geci:9443/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"wso2-idp",
+						"uat",
+						"eci",
+						"geci"
+					],
+					"port": "9443",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Token (AVE)  - Default User",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "_m6QFX8rfQvokgRdLaD1rnG1qEEa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "NMdtViE8YEfnfghdbeD1SZaLvI4a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "validity_period",
+							"value": "-157680000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "scope",
+							"value": "products_global_admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://wso2-idp.uat.eci.geci:9443/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"wso2-idp",
+						"uat",
+						"eci",
+						"geci"
+					],
+					"port": "9443",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Token (AVE) - REVOKE",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "LtHnLv6mLeMJSND7pXUAmXrQ2hYa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "QlmafP051Lfdm6TjUIJG2ajdYbEa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "a7c096b9-cf1f-3dd6-9ea5-91db67cb3af3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://wso2-idp.uat.eci.geci:9443/oauth2/revoke",
+					"protocol": "https",
+					"host": [
+						"wso2-idp",
+						"uat",
+						"eci",
+						"geci"
+					],
+					"port": "9443",
+					"path": [
+						"oauth2",
+						"revoke"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Token Refresh (AVE)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "iFDW3Zczq4SLkWG2zJvpGVY2u8Qa",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "q1xiBfqmzHwDSpPRKRiM6GAMmbYa",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "f3cd82b5-7688-3fba-9a0b-df61d1284950",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://wso2-idp.ave.eci.geci:9443/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"wso2-idp",
+						"ave",
+						"eci",
+						"geci"
+					],
+					"port": "9443",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Admin Groups - WSOS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-admin-groups/v1/admin-groups",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-admin-groups",
+						"v1",
+						"admin-groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Admin Groups Folder - WSOS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-admin-group-folders/v1/admin-group-folders",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-admin-group-folders",
+						"v1",
+						"admin-group-folders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Admin Groups Type - WSOS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-admin-group-types/v1/types",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-admin-group-types",
+						"v1",
+						"types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Attribute Translations - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-attributes-translations/v2/attributes-translations?path=%2FTV_Samsung",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-attributes-translations",
+						"v2",
+						"attributes-translations"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "%2FTV_Samsung"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Attribute Tree - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-attribute-tree-nodes/v1/tree-nodes-types/ph5nvda77tclsk",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-attribute-tree-nodes",
+						"v1",
+						"tree-nodes-types",
+						"ph5nvda77tclsk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Audit catalog - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-audit-catalog-dashboard/v1/offers/001012800100195%2042?seller_identifier=001&subsite=hipercorStore\n",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-audit-catalog-dashboard",
+						"v1",
+						"offers",
+						"001012800100195%2042"
+					],
+					"query": [
+						{
+							"key": "seller_identifier",
+							"value": "001"
+						},
+						{
+							"key": "subsite",
+							"value": "hipercorStore\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - BO Rule - WSOS - AVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-rules/v1/evaluate-rules",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-rules",
+						"v1",
+						"evaluate-rules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Category Rule - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-category-rules/v1/categories?adminGroupTypeId=content_group&name=item&page=0&size=20",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-category-rules",
+						"v1",
+						"categories"
+					],
+					"query": [
+						{
+							"key": "adminGroupTypeId",
+							"value": "content_group"
+						},
+						{
+							"key": "name",
+							"value": "item"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - BO Cat Category  - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-categories/v1/categories?date=2020-11-05&description=Notebooks&hierarchyId=25603&idCategory=25603.HPSEX010000000QA&page=0&size=10&subsite=hipercor",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-categories",
+						"v1",
+						"categories"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-11-05"
+						},
+						{
+							"key": "description",
+							"value": "Notebooks"
+						},
+						{
+							"key": "hierarchyId",
+							"value": "25603"
+						},
+						{
+							"key": "idCategory",
+							"value": "25603.HPSEX010000000QA"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "subsite",
+							"value": "hipercor"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Center Master data - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/centers/backoffice-master-data/v2/center-types?page=0&size=20",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"centers",
+						"backoffice-master-data",
+						"v2",
+						"center-types"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Content Groups - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-content-groups/v1/content-groups/jjj",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-content-groups",
+						"v1",
+						"content-groups",
+						"jjj"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Entities - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-entities/v1/entities?entity_type_id=166c6643-66a3-4cb5-8d85-3965293899f9&name=entity&page=0&size=20",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-entities",
+						"v1",
+						"entities"
+					],
+					"query": [
+						{
+							"key": "entity_type_id",
+							"value": "166c6643-66a3-4cb5-8d85-3965293899f9"
+						},
+						{
+							"key": "name",
+							"value": "entity"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Entity-Types - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-entity-types/v1/entity-types?name=Brand",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-entity-types",
+						"v1",
+						"entity-types"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Brand"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Exploded Trees - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-exploded-trees/v1/exploded-trees?attribute_name=Descripcion&page=0&products_name=Accesorios_Soporte_ISS&size=20",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-exploded-trees",
+						"v1",
+						"exploded-trees"
+					],
+					"query": [
+						{
+							"key": "attribute_name",
+							"value": "Descripcion"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "products_name",
+							"value": "Accesorios_Soporte_ISS"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Facet Attribute - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-facet-attributes/v1/facet-attributes?facet_id=0257cfe8-696b-4091-ad1f-bf79dd0fbad3&page=0&size=20",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-facet-attributes",
+						"v1",
+						"facet-attributes"
+					],
+					"query": [
+						{
+							"key": "facet_id",
+							"value": "0257cfe8-696b-4091-ad1f-bf79dd0fbad3"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Facet Links - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-facet-links/v1/facet-links?attribute_id=attId&facet_id=facetId&page=0&size=20",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-facet-links",
+						"v1",
+						"facet-links"
+					],
+					"query": [
+						{
+							"key": "attribute_id",
+							"value": "attId"
+						},
+						{
+							"key": "facet_id",
+							"value": "facetId"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Facet Links - WSOS - AVE Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-facet-links/v1/facet-links?attribute_id=attId&facet_id=facetId&page=0&size=20",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-facet-links",
+						"v1",
+						"facet-links"
+					],
+					"query": [
+						{
+							"key": "attribute_id",
+							"value": "attId"
+						},
+						{
+							"key": "facet_id",
+							"value": "facetId"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Facets - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-facets/v1/facets?name=name&page=0&size=20",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-facets",
+						"v1",
+						"facets"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "name"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - BO Group Experts - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-groupexpert/v1/expert-groups",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-groupexpert",
+						"v1",
+						"expert-groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Item Flags - Exclude Search - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-item-flags/v1/exclude-searches",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-item-flags",
+						"v1",
+						"exclude-searches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Item Flags - Limit Sales - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-item-flags/v1/limit-sales",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-item-flags",
+						"v1",
+						"limit-sales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Product Types - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-product-types/v1/product-types?name=QA&page=1&size=10",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-product-types",
+						"v1",
+						"product-types"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "QA"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Stock - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-stock/v1/stocks?page=0&size=10",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-stock",
+						"v1",
+						"stocks"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Brands - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/ecommerce-brand/v1/brands?category_id=997.8185047011&center_id=0090&locale=es_ES&site=hipercor&subsite=hipercorStore\n",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"ecommerce-brand",
+						"v1",
+						"brands"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "997.8185047011"
+						},
+						{
+							"key": "center_id",
+							"value": "0090"
+						},
+						{
+							"key": "locale",
+							"value": "es_ES"
+						},
+						{
+							"key": "site",
+							"value": "hipercor"
+						},
+						{
+							"key": "subsite",
+							"value": "hipercorStore\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - PLP Filters - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/ecommerce-plp-search-utils/v1/searchfilters?site=hipercor&subsite=hipercorStore",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"ecommerce-plp-search-utils",
+						"v1",
+						"searchfilters"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "hipercor"
+						},
+						{
+							"key": "subsite",
+							"value": "hipercorStore"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - PLP Sorting - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/ecommerce-plp-search-utils/v1/sortings?site=hipercor&subsite=hipercorStore",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"ecommerce-plp-search-utils",
+						"v1",
+						"sortings"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "hipercor"
+						},
+						{
+							"key": "subsite",
+							"value": "hipercorStore"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Conv-Status Flow - WSOS - AVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"business_object\": {\n      \"admin_click_and_collect_actions\": [\n        {\n          \"name\": \"infinite_stock\",\n          \"value\": \"false\"\n        }\n      ],\n      \"availability_units\": 5,\n      \"centers\": [\n        {\n          \"identifier\": \"0202\",\n          \"is_click_and_car\": true,\n          \"is_eci_express\": true\n        }\n      ],\n      \"delivery_time\": \"S48\",\n      \"fields_to_update\": [ \"centers\", \"delivery_time\"],\n      \"index_status\": \"ADD TO INDEX\",\n      \"is_click_and_car\": true,\n      \"is_click_and_collect\": true,\n      \"is_digital\": true,\n      \"is_eci_express\": true,\n      \"is_home_delivery\": true,\n      \"is_sts_pick_up\": true,\n      \"purchase_availability\": \"ADD\",\n      \"sts_companies\": [\n        {\n          \"identifier\": \"006\",\n          \"name\": \"CELERITAS\"\n        },\n        {\n          \"identifier\": \"004\",\n          \"name\": \"CORREOS\"\n        }\n      ]\n    },\n    \"created_date\": {\n      \"value\": \"2020-01-22T14:56:43Z\"\n    },\n    \"creator\": \"QA\",\n    \"entity_id\": \"QA Entity\",\n    \"gtin\": \"string\",\n    \"id\": \"A24772850\",\n    \"last_modified_by\": \"QA\",\n    \"last_modified_date\": {\n      \"value\": \"2020-01-22T14:56:43Z\"\n    },\n    \"product_id\": \"A24772850\",\n    \"sales_reference\": \"001028615901056   \",\n    \"seller\": \"001\",\n    \"site\": \"eciStore\",\n    \"subsite\": \"eciStore_MercanciaGeneral\",\n    \"unique_code\": \"000000000145848520\"\n  }\n]"
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/systems/stflow-conv/v1/process",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"systems",
+						"stflow-conv",
+						"v1",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Conv-Price - WSOS - AVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"business_object\": {\n        \"gtin\": null,\n        \"product_id\": \"A123453985196QA3\",\n        \"sales_reference\": \"0010012456789\",\n        \"seller\": \"001\",\n        \"site\": \"eciStore\",\n        \"subsite\": \"eciStore_MercanciaGeneral\",\n        \"unique_code\": 123456789456789\n    },\n    \"created_date\": {\n        \"value\": \"2020-01-22T14:56:43Z\"\n    },\n    \"creator\": \"QA\",\n    \"entity_id\": \"QA Entity\",\n    \"gtin\": null,\n    \"id\": \"A123453985196QA3\",\n    \"product_id\": \"A123453985196QA5\",\n    \"sales_reference\": \"0010012456789\",\n    \"seller\": \"001\",\n    \"site\": \"eciStore\",\n    \"subsite\": \"eciStore_MercanciaGeneral\",\n    \"unique_code\": 123456789456789\n}"
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/systems/prices-conv/v1/1.0.0/process",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"systems",
+						"prices-conv",
+						"v1",
+						"1.0.0",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Conv-Data - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/conv-data/v1/1.0.0/products?unique_code=000000000145848520&site=eciStore&subsite=eciStore_MercanciaGeneral&seller=001",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"conv-data",
+						"v1",
+						"1.0.0",
+						"products"
+					],
+					"query": [
+						{
+							"key": "unique_code",
+							"value": "000000000145848520"
+						},
+						{
+							"key": "site",
+							"value": "eciStore"
+						},
+						{
+							"key": "subsite",
+							"value": "eciStore_MercanciaGeneral"
+						},
+						{
+							"key": "seller",
+							"value": "001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - PDP - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/ecommerce-pdp-business/v1/pdp/QA520699999QA?site=hipercor&subsite=hipercorStore",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"ecommerce-pdp-business",
+						"v1",
+						"pdp",
+						"QA520699999QA"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "hipercor"
+						},
+						{
+							"key": "subsite",
+							"value": "hipercorStore"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Products Comparator - WSOS - AVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/ecommerce-comparator/v1/products/compare",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"ecommerce-comparator",
+						"v1",
+						"products",
+						"compare"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - PLP - Products - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/ecommerce-search/v1/products?products=QA520699999QA&site=hipercor&subsite=hipercorStore",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"ecommerce-search",
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "products",
+							"value": "QA520699999QA"
+						},
+						{
+							"key": "site",
+							"value": "hipercor"
+						},
+						{
+							"key": "subsite",
+							"value": "hipercorStore"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - PLP - Related Products - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/ecommerce-search/v1/products/A123456/related-products?site=hipercor&subsite=hipercorStore",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"ecommerce-search",
+						"v1",
+						"products",
+						"A123456",
+						"related-products"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "hipercor"
+						},
+						{
+							"key": "subsite",
+							"value": "hipercorStore"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - PLP - People - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/ecommerce-search/v1/people/PersonIs?site=hipercor&subsite=hipercorStore",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"ecommerce-search",
+						"v1",
+						"people",
+						"PersonIs"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "hipercor"
+						},
+						{
+							"key": "subsite",
+							"value": "hipercorStore"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - MKP Badges - Files Upload - WSOS - AVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/marketplace-badges/v1/files/upload",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"marketplace-badges",
+						"v1",
+						"files",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - MKP Badges - Update - WSOS - AVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/marketplace-badges/v1/update",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"marketplace-badges",
+						"v1",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - MKP Ean Relations - WSOS - AVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/marketplace-ean-relations/v1/files/upload",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"marketplace-ean-relations",
+						"v1",
+						"files",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - MKP Fields - WSOS - AVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/marketplace-template-fields/v1/files/upload",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"marketplace-template-fields",
+						"v1",
+						"files",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - MKP - Product Relations - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/marketplace-product-relations/v1/?identifier=MP_0003753_5246&internal_gtin=9116561649200&brand_id=EASY%20WEAR&site_id=eciStore&title=Pijama&page=0&size=20",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"marketplace-product-relations",
+						"v1",
+						""
+					],
+					"query": [
+						{
+							"key": "identifier",
+							"value": "MP_0003753_5246"
+						},
+						{
+							"key": "internal_gtin",
+							"value": "9116561649200"
+						},
+						{
+							"key": "brand_id",
+							"value": "EASY%20WEAR"
+						},
+						{
+							"key": "site_id",
+							"value": "eciStore"
+						},
+						{
+							"key": "title",
+							"value": "Pijama"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - MKP - Product Type - WSOS - NFT",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/marketplace-product-types/v1/12345",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"marketplace-product-types",
+						"v1",
+						"12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - MKP - Seller - WSOS - NFT",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/marketplace-seller/v1/0001503",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"marketplace-seller",
+						"v1",
+						"0001503"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - MKP - Product Types - WSOS - NFT",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/marketplace-product-types/v1/0001503",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"marketplace-product-types",
+						"v1",
+						"0001503"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Promotion Data - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/promotions/backoffice-promotions/v1/promotional-actions?site=eciStore&subsite=moda&seller=adidas&product_id=A10395003&sales_reference=001006810243870&gtin=8411114050027&unique_code=44403\n",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"promotions",
+						"backoffice-promotions",
+						"v1",
+						"promotional-actions"
+					],
+					"query": [
+						{
+							"key": "site",
+							"value": "eciStore"
+						},
+						{
+							"key": "subsite",
+							"value": "moda"
+						},
+						{
+							"key": "seller",
+							"value": "adidas"
+						},
+						{
+							"key": "product_id",
+							"value": "A10395003"
+						},
+						{
+							"key": "sales_reference",
+							"value": "001006810243870"
+						},
+						{
+							"key": "gtin",
+							"value": "8411114050027"
+						},
+						{
+							"key": "unique_code",
+							"value": "44403\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST  -BO Spec Templates - WSOS - AVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"QA_worker-1\",\"product_type_id\":\"QA_worker-1\",\"layouts\":[{\"type\":\"ROW\",\"columns\":[{\"type\":\"COLUMN\",\"items\":[{\"type\":\"LABEL\",\"label\":[{\"locale\":\"es_ES\",\"value\":\"Temperatura\"}]}]},{\"type\":\"COLUMN\",\"items\":[{\"type\":\"ATTRIBUTE\",\"name\":\"au6lcl7mnq2aig\",\"attribute_type\":\"STRING\",\"is_i18n\":true,\"value\":[{\"locale\":\"es_ES\",\"value\":\"Temperaturas\"}]}]}]}]}"
+				},
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-spec-templates/v2/products/templates",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-spec-templates",
+						"v2",
+						"products",
+						"templates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET  -BO Spec Templates - WSOS - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-spec-templates/v2/products/templates/hola",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-spec-templates",
+						"v2",
+						"products",
+						"templates",
+						"hola"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET  - Promos -  WSOS - AVE Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/promotions/backoffice-promotions/v1/promotional-actions/20300009/offers",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"promotions",
+						"backoffice-promotions",
+						"v1",
+						"promotional-actions",
+						"20300009",
+						"offers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Expert Groups - WSOS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://wso2-apigw-ext.paas.uat.eci.geci:443/products/backoffice-group-expert/v1/1.0.0/expert-groups",
+					"protocol": "https",
+					"host": [
+						"wso2-apigw-ext",
+						"paas",
+						"uat",
+						"eci",
+						"geci"
+					],
+					"port": "443",
+					"path": [
+						"products",
+						"backoffice-group-expert",
+						"v1",
+						"1.0.0",
+						"expert-groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - MKP - Product Categories - WSOS - NFT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/marketplace-product-categories/v1/1.0.0/products/primary-migrate",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"marketplace-product-categories",
+						"v1",
+						"1.0.0",
+						"products",
+						"primary-migrate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - BO Rules - AVE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{URL_BASE}}/products/backoffice-assortment/v2/product-searchers?gtin=001",
+					"host": [
+						"{{URL_BASE}}"
+					],
+					"path": [
+						"products",
+						"backoffice-assortment",
+						"v2",
+						"product-searchers"
+					],
+					"query": [
+						{
+							"key": "gtin",
+							"value": "001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OTHERS - POST - Job Launcher - AVE",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query_parameters\": [\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://job-launcher-service-ocp.ave.eci.geci/jobs/firefly-bi-ave.bi-topsales-aggregator/runs",
+					"protocol": "http",
+					"host": [
+						"job-launcher-service-ocp",
+						"ave",
+						"eci",
+						"geci"
+					],
+					"path": [
+						"jobs",
+						"firefly-bi-ave.bi-topsales-aggregator",
+						"runs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OTHERS - GET - Job Status - AVE",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://job-launcher-service-ocp.nft.eci.geci/jobs/firefly-bi-ave.bi-topsales-aggregator/runs/bi-topsales-aggregator-20211022141631",
+					"protocol": "http",
+					"host": [
+						"job-launcher-service-ocp",
+						"nft",
+						"eci",
+						"geci"
+					],
+					"path": [
+						"jobs",
+						"firefly-bi-ave.bi-topsales-aggregator",
+						"runs",
+						"bi-topsales-aggregator-20211022141631"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OTHERS - GET - Consumer Groups",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9009/api/consumer-groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9009",
+					"path": [
+						"api",
+						"consumer-groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OTHERS - GET - DATA Openshift",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjlIU09HZnF0UnZKR2REVWV5TERzc0tVWEw2SEdtdWJ3dWxLT0tfejdYZ0UifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJmaXJlZmx5LXBlcmYtYXZlIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InNhbmRib3hlcy10b2tlbi14NHhoNyIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJzYW5kYm94ZXMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIzOTAxODM0ZC1iMjcwLTRlNjAtODlkNS0wMTk5YTNjZjk1NTEiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZmlyZWZseS1wZXJmLWF2ZTpzYW5kYm94ZXMifQ.O4fsMb0NYbiWJAMe_Ezsw_YPL5q44LytZQhchyv33yrsYnhxo-vhfcnExA6_Au2PzAkDuhUBj_Hdil8hWGG803HtTfg--rDXxjTS3GA1K6h3X7KL_23fAEFMt8yCvj3RUTNSkEl5SrjKmUg-32Tvyaf59gLo9-h23w0zbvR5_ZjJTA_glBYQNkA2WgyKnESGN3hGDvfwX1FFvdUAdy2USTyH0D-TGHqoc31s2tMIN73A_r-UQfC4RCcHJMefNsTmcc5ZrFqapUWT9HznYNQSzsgXrJALEZDumCCZVns-uYnLNtEduhGpQ0IpQXfrK2gqCfmMwIXzGz8VCBwJMOg35Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjlIU09HZnF0UnZKR2REVWV5TERzc0tVWEw2SEdtdWJ3dWxLT0tfejdYZ0UifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJmaXJlZmx5LXBlcmYtYXZlIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InNhbmRib3hlcy10b2tlbi14NHhoNyIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJzYW5kYm94ZXMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIzOTAxODM0ZC1iMjcwLTRlNjAtODlkNS0wMTk5YTNjZjk1NTEiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZmlyZWZseS1wZXJmLWF2ZTpzYW5kYm94ZXMifQ.O4fsMb0NYbiWJAMe_Ezsw_YPL5q44LytZQhchyv33yrsYnhxo-vhfcnExA6_Au2PzAkDuhUBj_Hdil8hWGG803HtTfg--rDXxjTS3GA1K6h3X7KL_23fAEFMt8yCvj3RUTNSkEl5SrjKmUg-32Tvyaf59gLo9-h23w0zbvR5_ZjJTA_glBYQNkA2WgyKnESGN3hGDvfwX1FFvdUAdy2USTyH0D-TGHqoc31s2tMIN73A_r-UQfC4RCcHJMefNsTmcc5ZrFqapUWT9HznYNQSzsgXrJALEZDumCCZVns-uYnLNtEduhGpQ0IpQXfrK2gqCfmMwIXzGz8VCBwJMOg35Q",
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman."
+					}
+				],
+				"url": {
+					"raw": "https://api.des1-az.openshift.des.eci.geci:6443/api/v1/namespaces/common-ffsb2470/services",
+					"protocol": "https",
+					"host": [
+						"api",
+						"des1-az",
+						"openshift",
+						"des",
+						"eci",
+						"geci"
+					],
+					"port": "6443",
+					"path": [
+						"api",
+						"v1",
+						"namespaces",
+						"common-ffsb2470",
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OTHERS - POST - Consulta si un producto está indexado",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"anyTerm\": false,\n    \"ids\": [\n        \"QA520688888QA\"\n    ],\n    \"onlyInnerHits\": false\n}"
+				},
+				"url": {
+					"raw": "http://qbu-searcher.uat.eci.geci:80/searcher/v1/sites/firefly-hipercorstore_es/ids",
+					"protocol": "http",
+					"host": [
+						"qbu-searcher",
+						"uat",
+						"eci",
+						"geci"
+					],
+					"port": "80",
+					"path": [
+						"searcher",
+						"v1",
+						"sites",
+						"firefly-hipercorstore_es",
+						"ids"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{jwt}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.variables.clear();",
+					"",
+					"const moment = require('moment')",
+					"",
+					"const getJWT = {",
+					"    url: obtainIdpUrl(),",
+					"    method: 'POST',",
+					"    header: {",
+					"        'Content-Type': 'application/x-www-form-urlencoded',",
+					"    },",
+					"    body: {",
+					"        mode: 'urlencoded',",
+					"        urlencoded: [",
+					"            {key: 'grant_type', value: 'client_credentials'},",
+					"           // {key: 'scope', value: pm.environment.get('scope')},",
+					"            {key: 'client_id', value: obtainId()},",
+					"            {key: 'client_secret', value: obtainSecret()}",
+					"        ]",
+					"    }",
+					"}",
+					"",
+					"var getToken = true",
+					"if (!_.has(pm.environment.toObject(), 'AccessTokenExpiry') ",
+					"    || !_.has(pm.environment.toObject(), 'jwt')",
+					"    || pm.environment.get('AccessTokenExpiry') <= moment().valueOf()) {",
+					"} else {",
+					"    getToken = false",
+					"}",
+					"",
+					"if (getToken) {",
+					"    pm.sendRequest(getJWT, (err, res) => {",
+					"        if (err === null) {",
+					"            pm.environment.set('jwt', res.json().access_token)",
+					"            var expiryDate = moment().add(res.json().expires_in, 's').valueOf()",
+					"            pm.environment.set('AccessTokenExpiry', expiryDate)",
+					"        }",
+					"    })",
+					"}",
+					"",
+					"function obtainIdpUrl () {",
+					"    if (pm.environment.get('env') == 'ave')",
+					"      return 'https://wso2-idp.uat.eci.geci:9443/oauth2/token'",
+					"    else  if (pm.environment.get('env') == 'nft')",
+					"      return 'https://wso2-idp.nft.eci.geci:9443/oauth2/token'",
+					"    else  if (pm.environment.get('env') == 'uat')",
+					"      return 'https://wso2-idp.uat.eci.geci:9443/oauth2/token'",
+					"    else",
+					"      return 'no_env_url'",
+					"}",
+					"",
+					"function obtainId () {",
+					"    if (pm.environment.get('env') == 'ave')",
+					"      return 'QlmafP051Lfdm6TjUIJG2ajdYbEa'",
+					"    else  if (pm.environment.get('env') == 'nft')",
+					"      return 'iFDW3Zczq4SLkWG2zJvpGVY2u8Qa'",
+					"    else  if (pm.environment.get('env') == 'uat')",
+					"      return 'x9OiFIbN6qYa4DhpwDgi35S5MWMa'",
+					"    else",
+					"      return 'no_env_url'",
+					"}",
+					"",
+					"function obtainSecret () {",
+					"     if (pm.environment.get('env') == 'ave')",
+					"      return 'LtHnLv6mLeMJSND7pXUAmXrQ2hYa'",
+					"    else  if (pm.environment.get('env') == 'nft')",
+					"      return 'q1xiBfqmzHwDSpPRKRiM6GAMmbYa'",
+					"    else  if (pm.environment.get('env') == 'uat')",
+					"      return 'oeFX5bOfH1FNkNj_opj8tJd1i1sa'",
+					"    else",
+					"      return 'no_env_url'",
+					"}",
+					"",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

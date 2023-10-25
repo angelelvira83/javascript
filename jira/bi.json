@@ -1,0 +1,79 @@
+{
+  name: "Defecto",
+  priority: {
+    self: "https://jira.almeci.io/rest/api/2/priority/3",
+    iconUrl: "https://jira.almeci.io/images/icons/priorities/medium.svg",
+    name: "Media",
+    id: "3"
+  },
+  labels: [
+    "Entorno_UAT",
+    "firefly-bi",
+    "firefly-entityblinders",
+    "incidencia_priorizada",
+    "incidencia_test_plan"
+  ],
+  entorno: {
+    self: "https://jira.almeci.io/rest/api/2/customFieldOption/15702",
+    value: "UAT",
+    id: "15702",
+    disabled: false
+  },
+  team: {
+    self: "https://jira.almeci.io/rest/api/2/customFieldOption/15400",
+    value: "AT Sistemas",
+    id: "15400",
+    disabled: false,
+    child: {
+      self: "https://jira.almeci.io/rest/api/2/customFieldOption/15406",
+      value: "Entity Blinders",
+      id: "15406",
+      disabled: false
+    }
+  },
+  assignee: {
+    self: "https://jira.almeci.io/rest/api/2/user?username=X49842AL",
+    name: "X49842AL",
+    key: "x49842al",
+    emailAddress: "josegabrielalvaradoaguilar@gexterno.es",
+    avatarUrls: {
+      "48x48": "https://jira.almeci.io/secure/useravatar?ownerId=x49842al&avatarId=16204",
+      "24x24": "https://jira.almeci.io/secure/useravatar?size=small&ownerId=x49842al&avatarId=16204",
+      "16x16": "https://jira.almeci.io/secure/useravatar?size=xsmall&ownerId=x49842al&avatarId=16204",
+      "32x32": "https://jira.almeci.io/secure/useravatar?size=medium&ownerId=x49842al&avatarId=16204"
+    },
+    displayName: "JOSE GABRIEL ALVARADO AGUILA",
+    active: true,
+    timeZone: "Europe/Madrid"
+  },
+  project: {
+    self: "https://jira.almeci.io/rest/api/2/project/16900",
+    id: "16900",
+    key: "PD00000640",
+    name: "firefly-bi",
+    projectTypeKey: "software",
+    avatarUrls: {
+      "48x48": "https://jira.almeci.io/secure/projectavatar?pid=16900&avatarId=16324",
+      "24x24": "https://jira.almeci.io/secure/projectavatar?size=small&pid=16900&avatarId=16324",
+      "16x16": "https://jira.almeci.io/secure/projectavatar?size=xsmall&pid=16900&avatarId=16324",
+      "32x32": "https://jira.almeci.io/secure/projectavatar?size=medium&pid=16900&avatarId=16324"
+    },
+    projectCategory: {
+      self: "https://jira.almeci.io/rest/api/2/projectCategory/10500",
+      id: "10500",
+      description: "",
+      name: "Firefly"
+    }
+  },
+  fixVersions: [
+    {
+      self: "https://jira.almeci.io/rest/api/2/version/21746",
+      id: "21746",
+      description: "Para etiquetar las HU que son necesarias para Hito Hipercor",
+      name: "Hito_Hipercor",
+      archived: false,
+      released: false,
+      releaseDate: "2021-06-10"
+    }
+  ]
+}
